@@ -1,0 +1,132 @@
+//general
+@use './partials/variables' as *;
+
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    background-color: $content-bg;
+}
+.sans-narrow{
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+ul{
+    list-style-type: none; 
+    margin:0 !important; 
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 1rem;
+}
+
+//classes
+.d-none{
+    display: none;
+}
+
+//nav-links
+nav.nav-links ul{
+    display: flex;
+    align-items: center;
+}
+li a{
+    text-decoration: none;
+}
+
+//buttons
+button{
+    cursor: pointer;
+    text-transform: uppercase;
+    color: white;
+    &:hover{
+        opacity: $btn-hover;
+    }
+
+    &.outlined{
+        font-weight: 600;
+        padding:.8rem;
+        border:2px solid $main-dc-color;
+        background-color: #0000;
+    }
+
+    &.disabled{
+        filter: grayscale(1);
+        opacity: $btn-hover;
+    }
+}
+.filled{
+    font-weight: 600;
+    padding:.8rem 3.5rem;
+    background-color: $main-dc-color;
+    line-height: 50%;
+}
+
+//input
+.search-container{
+    border-bottom:2px solid $main-dc-color;
+
+    input,
+    input:focus{
+        border:0;
+        outline: 0;
+        font-size: .85rem;
+        font-weight: 800;
+        
+        &::placeholder{
+            opacity: 1;
+            text-align: end;
+            color: $main-text-color;
+        }
+    }
+}
+
+
+//header
+header {
+    background-color: white;
+    div.container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .img-container > img{
+            height: 70px;
+        }
+
+        nav.nav-links ul li{
+            margin: 0 1rem;
+            padding: 35px 0;
+            position: relative;
+            text-align: center;
+            cursor: pointer;
+
+            &.active .active-bar,
+            &:hover .active-bar{
+                display: block;
+            }
+            &.active a{
+                color: $main-dc-color;
+            }
+
+            a{
+                font-size: .8rem;
+                color: $main-text-color;
+                font-weight: bold;
+            }
+            .active-bar{
+                display: none;
+
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: .25rem;
+                background-color: $main-dc-color;
+            }
+        }
+    }
+}
