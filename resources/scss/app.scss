@@ -68,18 +68,19 @@ button{
 //input
 .search-container{
     border-bottom:2px solid $main-dc-color;
-
+    
     input,
-    input:focus{
+    input:focus,
+    i{
         border:0;
         outline: 0;
         font-size: .85rem;
         font-weight: 800;
+        color: $main-text-color;
         
         &::placeholder{
             opacity: 1;
             text-align: end;
-            color: $main-text-color;
         }
     }
 }

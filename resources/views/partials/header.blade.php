@@ -49,7 +49,7 @@
         </nav>
         <div class="search-container">
             <input type="text" name="searchBar" id="search-bar" placeholder="Search">
-            {{-- search icon --}}
+            <i class="fa-solid fa-magnifying-glass"></i>
         </div>
     </div>
 </header>

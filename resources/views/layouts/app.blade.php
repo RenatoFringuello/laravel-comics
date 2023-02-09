@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DC comics</title>
 
+    @yield('cdn')
+
     @vite('resources/js/app.js')
 </head>
 <body>
