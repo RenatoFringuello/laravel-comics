@@ -1,5 +1,5 @@
 <div class="jumbotron">
     <div class="container">
-        <h2 class="sans-narrow filled">current series</h2>
+        <div class="sans-narrow filled">current series</div>
     </div>
 </div>
