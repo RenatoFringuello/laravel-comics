@@ -19,43 +19,43 @@
             </a>
             <nav class="nav-links">
                 <ul>
-                    <li class="active">
+                    <li >
                         <a href="#">CHARACTERS</a>
                         <div class="active-bar"></div>
                     </li>
-                    <li class="">
+                    <li class="active">
                         <a href="#">COMICS</a>
                         <div class="active-bar"></div>
                     </li>
-                    <li class="">
+                    <li >
                         <a href="#">MOVIES</a>
                         <div class="active-bar"></div>
                     </li>
-                    <li class="">
+                    <li >
                         <a href="#">TV</a>
                         <div class="active-bar"></div>
                     </li>
-                    <li class="">
+                    <li >
                         <a href="#">GAMES</a>
                         <div class="active-bar"></div>
                     </li>
-                    <li class="">
+                    <li >
                         <a href="#">COLLECTIBLES</a>
                         <div class="active-bar"></div>
                     </li>
-                    <li class="">
+                    <li >
                         <a href="#">VIDEOS</a>
                         <div class="active-bar"></div>
                     </li>
-                    <li class="">
+                    <li >
                         <a href="#">FANS</a>
                         <div class="active-bar"></div>
                     </li>
-                    <li class="">
+                    <li >
                         <a href="#">NEWS</a>
                         <div class="active-bar"></div>
                     </li>
-                    <li class="">
+                    <li >
                         <a href="#">SHOP</a>
                         <div class="active-bar"></div>
                     </li>
