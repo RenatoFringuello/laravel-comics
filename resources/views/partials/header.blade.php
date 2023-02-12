@@ -3,17 +3,20 @@
         <div class="container">
             <span>DC POWER™VISA&reg;</span>
             <select name="dc-sites" id="dc-sites">
-                <option value="1">Additional DC Sites</option>
-                <option value="2">B</option>
-                <option value="3">C</option>
+                <option value="-">Additional DC Sites</option>
+                <option value="1">DC</option>
+                <option value="2">Mad Magazine</option>
+                <option value="3">DC Kids</option>
+                <option value="4">DC Universe</option>
+                <option value="5">DC Power Visa</option>
             </select>
         </div>
     </div>
     <div class="header-wrapper sans-narrow">
         <div class="container">
-            <div class="img-container">
+            <a href="/" class="img-container">
                 <img src="{{ Vite::asset('./resources/assets/images/dc-logo.png')}}" alt="DC Logo">
-            </div>
+            </a>
             <nav class="nav-links">
                 <ul>
                     <li class="active">
