@@ -1,5 +1,5 @@
 <div class="jumbotron">
     <div class="container">
-        <div class="sans-narrow filled">current series</div>
+        @include('partials.jumboTitle')
     </div>
 </div>
