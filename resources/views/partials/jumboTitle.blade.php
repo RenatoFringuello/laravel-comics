@@ -1,1 +1,0 @@
-<div class="sans-narrow filled">current series</div>
