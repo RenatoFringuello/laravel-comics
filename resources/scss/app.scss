@@ -199,9 +199,10 @@ section.comics-cards{
             padding: 0 1rem;
 
             //books
-            div.book{
+            a.book{
                 width: calc((100% / 6) - 1rem);
                 padding-top :1rem;
+                text-decoration: none;
                 cursor: pointer;
                 
                 .img-container {
