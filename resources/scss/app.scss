@@ -70,6 +70,7 @@ button{
     padding:.7rem 3rem;
     background-color: $main-dc-color;
     line-height: 50%;
+    max-height: 3rem;
 }
 
 //input
@@ -170,9 +171,9 @@ header {
     height: 300px;
     background:url('../assets/images/jumbotron.jpg') no-repeat;
     background-size: cover;
+    position: relative;
     
     .container{
-        position: relative;
         height: 100%;
         div.filled{
             position: absolute;
@@ -180,6 +181,29 @@ header {
             bottom:0;
             padding: 1rem 1.5rem;
             font-size: 1.5rem;
+        }
+    }
+    div.filled{
+        //     font-weight: 600;
+        // padding:.7rem 3rem;
+        // background-color: $main-dc-color;
+        // line-height: 50%;
+        // // max-height: 3rem;
+        position: absolute;
+        padding: 1.75rem;
+        transform: translateY(50%);
+        bottom:0;
+        width: 100%;
+
+        .comic-container{
+            max-width: $comic-contiainer-width;
+            margin: 0 auto;
+            padding-left: 1rem;
+            .comic-img{
+                transform: translateY(calc(-100% + 15px));
+                max-width: 140px;
+                border: 1px solid white;
+            }
         }
     }
 
