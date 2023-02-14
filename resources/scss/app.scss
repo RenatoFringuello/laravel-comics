@@ -273,10 +273,43 @@ section.comics-cards{
 }
 
 section.comic-info{
-    .availabile-section{
-        background-color: $available-color;
-        border-bottom: 1px solid $available-border-color;
-    }    
+    .comic-container{
+        @include container($comic-contiainer-width);
+        
+        .left{
+            flex-basis: 85%;
+            font-size: .7rem;
+            font-weight: 700;
+            
+            .price-section{
+                background-color: $available-color;
+                border-bottom: 1px solid $available-border-color;
+                
+                .right{
+                    border-left: 1px solid $available-border-color;
+                    select{
+                        font-size: inherit;
+                        font-weight: inherit;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .description{
+                color:$footer-link-text-color;
+                font-size: .65rem;
+                line-height: 1.2rem;
+            }
+        }  
+        .right{
+            padding-left: 2rem;
+            .adv-text{
+                text-align: end;
+                color:$footer-link-text-color;
+                font-size: .75rem;
+                font-weight: 700;
+            }
+        }  
+    }
 }
 
 //footer
