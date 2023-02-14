@@ -21,12 +21,15 @@ h1{
     margin: 0 !important;
 }
 
-.container{
-    max-width: $contiainer-width;
-    margin: 0 auto;
-    padding-left: 1rem;
+@mixin container($max-w, $padd-left:1rem, $margin : 0 auto){
+    max-width: $max-w;
+    margin: $margin;
+    padding-left: $padd-left;
 }
 
+.container{
+    @include container($contiainer-width);
+}
 //classes
 .d-none{
     display: none;
@@ -181,14 +184,10 @@ header {
             bottom:0;
             padding: 1rem 1.5rem;
             font-size: 1.5rem;
+            width: auto;
         }
     }
     div.filled{
-        //     font-weight: 600;
-        // padding:.7rem 3rem;
-        // background-color: $main-dc-color;
-        // line-height: 50%;
-        // // max-height: 3rem;
         position: absolute;
         padding: 1.75rem;
         transform: translateY(50%);
@@ -196,17 +195,25 @@ header {
         width: 100%;
 
         .comic-container{
-            max-width: $comic-contiainer-width;
-            margin: 0 auto;
-            padding-left: 1rem;
-            .comic-img{
-                transform: translateY(calc(-100% + 15px));
-                max-width: 140px;
+            @include container($comic-contiainer-width);
+            transform: translateY(calc(-100% + 15px));
+            .wrapper{
                 border: 1px solid white;
+                position: relative;
+                max-width: 140px;
+                
+                .info{
+                    position: absolute;
+                    background-color: $main-dc-color-light;
+                    font-size: .6rem;
+                    font-weight: 400;
+                    color: white;
+                    padding: .2rem;
+                    z-index: 2;
+                }
             }
         }
     }
-
 }
 
 //main-content
@@ -263,6 +270,13 @@ section.comics-cards{
     .sans-narrow{
         text-transform: uppercase;
     }
+}
+
+section.comic-info{
+    .availabile-section{
+        background-color: $available-color;
+        border-bottom: 1px solid $available-border-color;
+    }    
 }
 
 //footer
