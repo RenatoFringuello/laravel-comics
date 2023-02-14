@@ -8,9 +8,9 @@
     <section class="comic-info bg-light">
         @include('partials.jumbotron', ['thumb' => $comic['thumb']])
         {{-- @dump($comic) --}}
-        <section class="comic-container post d-flex pt-5">
+        <section class="comic-container post d-flex">
             <div class="left">
-                <h3 class="title mb-3">{{ $comic['title'] }}</h3>
+                <h4 class="title sans-narrow text-uppercase mb-3">{{ $comic['title'] }}</h4>
                 <div class="price-section mb-3 d-flex justify-content-between text-white">
                     <div class="left d-flex justify-content-between py-2 px-3">
                         <div class="price"> <span class="opacity-75">U.S. Price:</span> ${{$comic['price']}}</div>
@@ -34,6 +34,5 @@
                 </div>
             </div>
         </section>
-    
     </section>
 @endsection

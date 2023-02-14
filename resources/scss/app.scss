@@ -190,7 +190,7 @@ header {
     div.filled{
         position: absolute;
         padding: 1.75rem;
-        transform: translateY(50%);
+        transform: translateY(100%);
         bottom:0;
         width: 100%;
 
@@ -275,11 +275,17 @@ section.comics-cards{
 section.comic-info{
     .comic-container{
         @include container($comic-contiainer-width);
-        
+        padding-top: 7rem;
+
         .left{
             flex-basis: 85%;
             font-size: .7rem;
             font-weight: 700;
+
+            .title{
+                font-weight: bold;
+                color: $main-title-color;
+            }
             
             .price-section{
                 background-color: $available-color;
@@ -302,8 +308,12 @@ section.comic-info{
         }  
         .right{
             padding-left: 2rem;
+            position: relative;
             .adv-text{
-                text-align: end;
+                position: absolute;
+                transform: translateY(-100%);
+                top: 0;
+                right: 0;
                 color:$footer-link-text-color;
                 font-size: .75rem;
                 font-weight: 700;
