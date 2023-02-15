@@ -11,7 +11,7 @@
         @include('partials.jumbotron', ['thumb' => $comic['thumb']])
         {{-- @dump($comic) --}}
         <section class="comic-container post d-flex">
-            <div class="left">
+            <div class="left pb-3">
                 <h4 class="title sans-narrow text-uppercase mb-3">{{ $comic['title'] }}</h4>
                 <div class="price-section mb-3 d-flex justify-content-between text-white">
                     <div class="left d-flex justify-content-between py-2 px-3">
@@ -27,7 +27,11 @@
                         </select>
                     </div>
                 </div>
-                <p class="description mb-5">{{ $comic['description'] }}</p> 
+                <p class="description mb-5">{{ $comic['description'] }}</p>
+                <div class="buttons-container d-flex">
+                    <a href="{{route('comics.edit', $comic)}}" class="sans-narrow me-3 filled text-white fs-6 ">edit comic</a> 
+                    @include('partials.formDelete')
+                </div>
             </div>
             <div class="right ">
                 <div class="adv-container">
