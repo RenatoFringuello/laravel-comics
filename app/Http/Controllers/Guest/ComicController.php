@@ -70,24 +70,38 @@ class ComicController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+        return view('edit', compact('comic'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Comic comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $data = $request->all();
+        //dd($data);
+        $comic->title = $data['title'];
+        $comic->description = $data['description'];
+        $comic->thumb = $data['thumb'];
+        $comic->price = $data['price'];
+        $comic->series = $data['series'];
+        $comic->sale_date = $data['sale_date'];
+        $comic->type = $data['type'];
+        $comic->update();
+        //non so perchè non va cosi
+        // $comic->update($data);
+        
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
@@ -98,6 +112,8 @@ class ComicController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Comic::destroy($id);
+
+        return redirect()->route('comics.index');
     }
 }
