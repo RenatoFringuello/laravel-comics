@@ -1,4 +1,4 @@
-<a href="{{route('comic', $comic)}}" class="book">
+<a href="{{route('comics.show', $comic)}}" class="book">
     <div class="img-container">
         <img src="{{$comic['thumb']}}" alt="{{$comic['series']}}">
     </div>

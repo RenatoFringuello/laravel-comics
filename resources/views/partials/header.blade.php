@@ -14,7 +14,7 @@
     </div>
     <div class="header-wrapper sans-narrow">
         <div class="container">
-            <a href="{{route('index')}}" class="img-container">
+            <a href="{{route('comics.index')}}" class="img-container">
                 <img src="{{ Vite::asset('./resources/assets/images/dc-logo.png')}}" alt="DC Logo">
             </a>
             <nav class="nav-links">

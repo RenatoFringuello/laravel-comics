@@ -9,7 +9,7 @@
 @section('form-create')
     <section class="form-container py-4">
 
-        <form action="{{route('store')}}" method="POST">
+        <form action="{{route('comics.store')}}" method="POST">
             @csrf
 
             <div class="mb-3">
@@ -26,7 +26,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label text-white text-capitalize" for="price">price</label>
-                <input type="number" class="form-control" name="price" id="price">
+                <input type="text" class="form-control" name="price" id="price">
             </div>
             <div class="mb-3">
                 <label class="form-label text-white text-capitalize" for="series">series</label>

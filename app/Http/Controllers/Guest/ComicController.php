@@ -40,7 +40,7 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        dd($data);
+        // dd($data);
         $newComic = new Comic();
         $newComic->title = $data['title'];
         $newComic->description = $data['description'];
@@ -51,7 +51,7 @@ class ComicController extends Controller
         $newComic->type = $data['type'];
         $newComic->save();
 
-        return redirect()->route('home');
+        return redirect()->route('comics.index');
     }
 
     /**
@@ -62,8 +62,9 @@ class ComicController extends Controller
      */
     public function show($id)
     {
-        $comic = Comic::find($id);
-        return view('comic', compact('comic'));
+        //find or fail mi restituisce un exception se c'è un error
+        $comic = Comic::findOrFail($id);
+        return view('show', compact('comic'));
     }
 
     /**

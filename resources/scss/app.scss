@@ -226,7 +226,7 @@ section.comics-cards{
         .wrapper{
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center;
             padding: 0 1rem;
 
             //books
@@ -235,6 +235,10 @@ section.comics-cards{
                 padding-top :1rem;
                 text-decoration: none;
                 cursor: pointer;
+
+                &:not(:nth-child(6n)){
+                    margin-right: 1.1rem;
+                }
                 
                 .img-container {
                     margin-bottom: $margin-bottom;
