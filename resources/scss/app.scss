@@ -322,6 +322,13 @@ section.comic-info{
     }
 }
 
+section.form-container{
+    form{
+        @include container(800px);
+    }
+}
+
+
 //footer
 footer{
     //all-nav

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'DC Comics')
+
 @section('cdn')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 @endsection
@@ -22,6 +24,7 @@
                     >
                     load more
                 </button>
+                <a href="{{route('create')}}" class="sans-narrow filled text-white py-1">add comic</a>
             </div>
         </div>
     </section>

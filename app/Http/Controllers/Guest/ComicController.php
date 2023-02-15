@@ -18,7 +18,7 @@ class ComicController extends Controller
         $comics = Comic::all();
         $maxBookRequested = 12;
         // dd($comics);
-        return view('home', compact('comics', 'maxBookRequested'));
+        return view('index', compact('comics', 'maxBookRequested'));
     }
 
     /**
@@ -28,7 +28,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -39,7 +39,19 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        dd($data);
+        $newComic = new Comic();
+        $newComic->title = $data['title'];
+        $newComic->description = $data['description'];
+        $newComic->thumb = $data['thumb'];
+        $newComic->price = $data['price'];
+        $newComic->series = $data['series'];
+        $newComic->sale_date = $data['sale_date'];
+        $newComic->type = $data['type'];
+        $newComic->save();
+
+        return redirect()->route('home');
     }
 
     /**
