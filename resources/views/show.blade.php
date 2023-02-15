@@ -8,7 +8,7 @@
 
 @section('comic-info')
     <section class="comic-info bg-light">
-        @include('partials.jumbotron', ['thumb' => $comic['thumb']])
+        @include('partials.jumbotron', $comic)
         {{-- @dump($comic) --}}
         <section class="comic-container post d-flex">
             <div class="left pb-3">
