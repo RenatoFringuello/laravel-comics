@@ -8,5 +8,5 @@
 
 @section('form-create')
     {{-- @dump(['action' => 'comics.update', 'method' => 'POST', 'methodMap' => 'PUT', 'comic' => $comic]); --}}
-    @include('partials.form', ['action' => 'comics.update', 'method' => 'POST', 'methodMap' => 'PUT', 'comic' => $comic])
+    @include('partials.form', ['action' => 'comics.update', 'method' => 'POST', 'methodMap' => 'PUT', 'comic'])
 @endsection

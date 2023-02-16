@@ -7,5 +7,5 @@
 @endsection
 
 @section('form-create')
-    @include('partials.form', ['action' => 'comics.store', 'method' => 'POST', 'methodMap' => '', 'comic'=>null])
+    @include('partials.form', ['action' => 'comics.store', 'method' => 'POST', 'methodMap' => '', 'comic'])
 @endsection
