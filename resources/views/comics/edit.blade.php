@@ -10,3 +10,7 @@
     {{-- @dump(['action' => 'comics.update', 'method' => 'POST', 'methodMap' => 'PUT', 'comic' => $comic]); --}}
     @include('partials.form', ['action' => 'comics.update', 'method' => 'POST', 'methodMap' => 'PUT', 'comic'])
 @endsection
+
+@section('scripts')
+    <script src="{{Vite::asset('./resources/js/scripts/actionConfirm.js')}}"></script>
+@endsection

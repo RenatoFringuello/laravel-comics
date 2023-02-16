@@ -42,3 +42,7 @@
         </section>
     </section>
 @endsection
+
+@section('scripts')
+    <script src="{{Vite::asset('./resources/js/scripts/actionConfirm.js')}}"></script>
+@endsection

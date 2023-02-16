@@ -9,3 +9,7 @@
 @section('form-create')
     @include('partials.form', ['action' => 'comics.store', 'method' => 'POST', 'methodMap' => '', 'comic'])
 @endsection
+
+@section('scripts')
+    <script src="{{Vite::asset('./resources/js/scripts/actionConfirm.js')}}"></script>
+@endsection
