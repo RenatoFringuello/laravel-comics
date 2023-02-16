@@ -18,7 +18,7 @@ class ComicController extends Controller
         $comics = Comic::all();
         $maxBookRequested = 12;
         // dd($comics);
-        return view('index', compact('comics', 'maxBookRequested'));
+        return view('comics.index', compact('comics', 'maxBookRequested'));
     }
 
     /**
@@ -29,7 +29,7 @@ class ComicController extends Controller
     public function create()
     {
         $comic = new Comic();
-        return view('create', compact('comic'));
+        return view('comics.create', compact('comic'));
     }
 
     /**
@@ -65,7 +65,7 @@ class ComicController extends Controller
     {
         //find or fail mi restituisce un exception se c'è un error
         $comic = Comic::findOrFail($id);
-        return view('show', compact('comic'));
+        return view('comics.show', compact('comic'));
     }
 
     /**
@@ -77,7 +77,7 @@ class ComicController extends Controller
     public function edit($id)
     {
         $comic = Comic::findOrFail($id);
-        return view('edit', compact('comic'));
+        return view('comics.edit', compact('comic'));
     }
 
     /**
