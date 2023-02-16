@@ -1,0 +1,120 @@
+@use './variables' as *;
+
+//main-content
+//for comics-cards in route comics/ or / (include every thing but header and footer)
+section.comics-cards{
+    color:white;
+
+    .container{
+        padding: 1.5rem 1rem 1rem;
+
+        .wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0 1rem;
+
+            //books
+            a.book{
+                width: calc((100% / 6) - 1rem);
+                padding-top :1rem;
+                text-decoration: none;
+                cursor: pointer;
+
+                &:not(:nth-child(6n)){
+                    margin-right: 1.1rem;
+                }
+                
+                .img-container {
+                    margin-bottom: $margin-bottom;
+                    img{
+                        width: 100%;
+                        height: calc(($contiainer-width / 6) - 1rem);
+                        object-fit: cover;
+                        object-position:top;
+                        display: block;
+                    }
+                }
+                .text{
+                    font-size: .7rem;
+                    color:white;
+                    &.visible{
+                        visibility: visible;
+                    }   
+                    &.hidden{
+                        visibility: hidden;
+                    }
+                }
+            }
+        }
+        .btn-container{
+            text-align: center;
+            padding-top: 1rem;
+            button{
+                font-size: .8rem;
+            }
+        }
+    }
+    
+    .sans-narrow{
+        text-transform: uppercase;
+    }
+}
+
+//for comic-info in route comics/{id} (include every thing but header and footer)
+section.comic-info{
+    .comic-container{
+        @include container($comic-contiainer-width);
+        padding-top: 7rem;
+
+        .left{
+            flex-basis: 85%;
+            font-size: .7rem;
+            font-weight: 700;
+
+            .title{
+                font-weight: bold;
+                color: $main-title-color;
+            }
+            
+            .price-section{
+                background-color: $available-color;
+                border-bottom: 1px solid $available-border-color;
+                
+                .right{
+                    border-left: 1px solid $available-border-color;
+                    select{
+                        font-size: inherit;
+                        font-weight: inherit;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .description{
+                color:$footer-link-text-color;
+                font-size: .65rem;
+                line-height: 1.2rem;
+            }
+        }  
+        .right{
+            padding-left: 2rem;
+            position: relative;
+            .adv-text{
+                position: absolute;
+                transform: translateY(-100%);
+                top: 0;
+                right: 0;
+                color:$footer-link-text-color;
+                font-size: .75rem;
+                font-weight: 700;
+            }
+        }  
+    }
+}
+
+//for delete button in route comics/{id}
+section.form-container{
+    form{
+        @include container(800px);
+    }
+}

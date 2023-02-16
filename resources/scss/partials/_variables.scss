@@ -17,3 +17,10 @@ $btn-hover : .7;//opacity
 $margin-bottom:1rem;
 $contiainer-width :992px;
 $comic-contiainer-width :800px;
+
+//mixins
+@mixin container($max-w, $padd-left:1rem, $margin : 0 auto){
+    max-width: $max-w;
+    margin: $margin;
+    padding-left: $padd-left;
+}

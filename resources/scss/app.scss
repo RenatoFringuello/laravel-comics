@@ -1,5 +1,9 @@
 //general
 @use './partials/variables' as *;
+@use './partials/header' as *;
+@use './partials/jumbotron' as *;
+@use './partials/main' as *;
+@use './partials/footer' as *;
 
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=PT+Sans+Narrow:wght@400;700&display=swap');
@@ -13,6 +17,7 @@ body{
 }
 
 ul{ 
+    list-style-type: none;
     margin: 0 !important;
 }
 
@@ -20,20 +25,11 @@ h1{
     margin: 0 !important;
 }
 
-@mixin container($max-w, $padd-left:1rem, $margin : 0 auto){
-    max-width: $max-w;
-    margin: $margin;
-    padding-left: $padd-left;
-}
-
 .container{
     @include container($contiainer-width);
 }
-//classes
-.d-none{
-    display: none;
-}
 
+//classes
 //nav-links
 nav.nav-links ul{
     display: flex;
@@ -95,331 +91,8 @@ button{
         }
     }
 }
-
 //select
 select{
     border: 0;
     background: #0000;
-}
-
-//header
-header {
-    ul{
-        list-style-type: none;
-    }
-    div.header-info-wrapper{
-        background-color: $main-dc-color;
-        div.container{
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            font-size: .6rem;
-            padding: .1rem 0;
-            span{
-                color:white;
-                margin-right: 3.5rem;
-            }
-            select{
-                color:white;
-                text-transform: uppercase;
-            }
-        }
-    }
-    div.header-wrapper{
-        background-color: white;
-        div.container{
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            .img-container > img{
-                height: 70px;
-            }
-
-            nav.nav-links ul li{
-                margin: 0 1rem;
-                padding: 35px 0;
-                position: relative;
-                text-align: center;
-                cursor: pointer;
-
-                &.active .active-bar,
-                &:hover .active-bar{
-                    display: block;
-                }
-                &.active a{
-                    color: $main-dc-color;
-                }
-
-                a{
-                    font-size: .8rem;
-                    color: $main-text-color;
-                    font-weight: bold;
-                }
-                .active-bar{
-                    display: none;
-
-                    position: absolute;
-                    bottom: 0;
-                    width: 100%;
-                    height: .25rem;
-                    background-color: $main-dc-color;
-                }
-            }
-        }
-    }
-
-}
-
-.jumbotron {
-    height: 300px;
-    background:url('../assets/images/jumbotron.jpg') no-repeat;
-    background-size: cover;
-    position: relative;
-    
-    .container{
-        height: 100%;
-        div.filled{
-            position: absolute;
-            transform: translateY(50%);
-            bottom:0;
-            padding: 1rem 1.5rem;
-            font-size: 1.5rem;
-            width: auto;
-        }
-    }
-    div.filled{
-        position: absolute;
-        padding: 1.75rem;
-        transform: translateY(100%);
-        bottom:0;
-        width: 100%;
-
-        .comic-container{
-            @include container($comic-contiainer-width);
-            transform: translateY(calc(-100% + 15px));
-            .wrapper{
-                border: 1px solid white;
-                position: relative;
-                max-width: 140px;
-                
-                .info{
-                    position: absolute;
-                    background-color: $main-dc-color-light;
-                    font-size: .6rem;
-                    font-weight: 400;
-                    color: white;
-                    padding: .2rem;
-                    z-index: 2;
-                }
-            }
-        }
-    }
-}
-
-//main-content
-section.comics-cards{
-    color:white;
-
-    .container{
-        padding: 1.5rem 1rem 1rem;
-
-        .wrapper{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 0 1rem;
-
-            //books
-            a.book{
-                width: calc((100% / 6) - 1rem);
-                padding-top :1rem;
-                text-decoration: none;
-                cursor: pointer;
-
-                &:not(:nth-child(6n)){
-                    margin-right: 1.1rem;
-                }
-                
-                .img-container {
-                    margin-bottom: $margin-bottom;
-                    img{
-                        width: 100%;
-                        height: calc(($contiainer-width / 6) - 1rem);
-                        object-fit: cover;
-                        object-position:top;
-                        display: block;
-                    }
-                }
-                .text{
-                    font-size: .7rem;
-                    color:white;
-                    &.visible{
-                        visibility: visible;
-                    }   
-                    &.hidden{
-                        visibility: hidden;
-                    }
-                }
-            }
-        }
-        .btn-container{
-            text-align: center;
-            padding-top: 1rem;
-            button{
-                font-size: .8rem;
-            }
-        }
-    }
-    
-    .sans-narrow{
-        text-transform: uppercase;
-    }
-}
-
-section.comic-info{
-    .comic-container{
-        @include container($comic-contiainer-width);
-        padding-top: 7rem;
-
-        .left{
-            flex-basis: 85%;
-            font-size: .7rem;
-            font-weight: 700;
-
-            .title{
-                font-weight: bold;
-                color: $main-title-color;
-            }
-            
-            .price-section{
-                background-color: $available-color;
-                border-bottom: 1px solid $available-border-color;
-                
-                .right{
-                    border-left: 1px solid $available-border-color;
-                    select{
-                        font-size: inherit;
-                        font-weight: inherit;
-                        cursor: pointer;
-                    }
-                }
-            }
-            .description{
-                color:$footer-link-text-color;
-                font-size: .65rem;
-                line-height: 1.2rem;
-            }
-        }  
-        .right{
-            padding-left: 2rem;
-            position: relative;
-            .adv-text{
-                position: absolute;
-                transform: translateY(-100%);
-                top: 0;
-                right: 0;
-                color:$footer-link-text-color;
-                font-size: .75rem;
-                font-weight: 700;
-            }
-        }  
-    }
-}
-
-section.form-container{
-    form{
-        @include container(800px);
-    }
-}
-
-
-//footer
-footer{
-    //all-nav
-    section.all-nav{
-            
-        background: url('../assets/images/footer-bg.jpg') no-repeat;
-        background-size: cover;
-        
-        .container{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            overflow-y: hidden;
-
-            nav{
-                display: flex;
-                
-                ul{
-                    margin-right:1.5rem;
-                    
-                    li{
-                        line-height: 1rem;
-                        
-                        a{
-                            font-size: 0.7rem;
-                            color:$footer-link-text-color ;
-                            
-                            &.sans-narrow{
-                                text-transform: uppercase;
-                                font-size: 1.2rem !important;
-                                font-weight: bold;
-                                color:#fff;
-                                cursor: text;
-                                display: block;
-                                margin: 1rem 0 .8rem;
-                            }
-                        }
-                    }
-                }
-            }
-            div.img-container{
-                background: url('../assets/images/dc-logo-bg.png') no-repeat;
-                background-size: cover;
-                background-position: center;
-                width: 45%;
-                height: 330px;
-            }
-        }
-    }
-    //sign-up
-    section.sign-up{
-        background-color: $sign-up-bg;
-        .container{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 0;
-            
-            nav.social{
-                display: flex;
-                align-items: center;
-                
-                h1{
-                    text-transform: uppercase;
-                    color: $main-dc-color ;
-                    font-size: 1.2rem;
-                    font-weight: bold;
-                }
-                ul{
-                    margin-left: 1rem;
-                    display: flex;
-                    li{
-                        margin-left: 1rem;
-                        a{
-                            img{
-                                height: 30px;
-                                width:  30px;
-                            }
-                            &:hover{
-                                opacity:.7;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
 }
