@@ -1,6 +1,16 @@
 <section class="form-container py-4">
     {{-- @dump($action, $method, $methodMap, $comic->id) --}}
     <form action="{{route($action, $comic->id)}}" method="{{$method}}">
+        @if ($errors->any())
+            <div class="p-3 mb-3 bg-danger rounded-3">
+                <ul class="list-group">
+                    @foreach ($errors->all() as $error)
+                        <li class="list-group-item list-group-item-danger">{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         @csrf
         @if (isset($methodMap))
             @method($methodMap)
