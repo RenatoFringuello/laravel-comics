@@ -20,5 +20,7 @@
         @yield('form-create')
     </main>
     @include('partials.footer')
+
+    @yield('scripts')
 </body>
 </html>
