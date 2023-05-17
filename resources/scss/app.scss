@@ -40,7 +40,8 @@ li a{
 }
 
 //buttons
-button{
+button,
+a{
     cursor: pointer;
     text-transform: uppercase;
     color: white;
@@ -57,11 +58,7 @@ button{
         border:2px solid $main-dc-color;
         background-color: #0000;
     }
-
-    &.disabled{
-        filter: grayscale(1);
-        opacity: $btn-hover;
-    }
+    
 }
 .filled{
     font-weight: 600;
@@ -69,6 +66,9 @@ button{
     background-color: $main-dc-color;
     line-height: 50%;
     max-height: 3rem;
+    &.disabled{
+        filter: grayscale(1) !important;
+    }
 }
 
 //input
