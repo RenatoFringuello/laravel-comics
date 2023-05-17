@@ -13,19 +13,19 @@
             <div class="wrapper">
                 @foreach ($comics as $index => $comic)
                     {{-- limit the comic show --}}
-                    {{-- @if ($index < $maxBookRequested) --}}
-                        @include('partials.book', $comic)
-                    {{-- @endif --}}
+                    @include('partials.book', $comic)
                 @endforeach
             </div>
             <div class="btn-container">
-                <button 
-                    class="sans-narrow filled {{ (count($comics) <= $maxBookRequested) ? 'disabled' : 'clickable'  }}" 
-                    {{-- @click="maxBookRequested += (nBookPerRow * 2)" --}}
-                    >
-                    load more
-                </button>
-                {{-- @dump([count($comics) ,$maxBookRequested, $comics]) --}}
+                @dump($isAllLoaded)
+                @if (!$isAllLoaded)
+                    <a  class="sans-narrow filled text-white py-1 me-2" 
+                        href="{{route('home', ['loadBook' => count($comics) + 12])}}">
+                        load more
+                    </a>
+                @else
+                    <span class="sans-narrow filled text-white py-1 me-2 disabled">load more</span>
+                @endif
                 <a href="{{route('comics.create')}}" class="sans-narrow filled text-white py-1">add comic</a>
             </div>
         </div>

@@ -53,12 +53,14 @@ class ComicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $comics = Comic::all();
-        $maxBookRequested = 12;
+        $maxBookRequested = (isset($request->loadBook))? $request->loadBook : 12;
+        $comics = Comic::limit($maxBookRequested)->get();
+        $nComic = count(Comic::all());
+        $isAllLoaded = ($maxBookRequested == $nComic);
         // dd($comics);
-        return view('comics.index', compact('comics', 'maxBookRequested'));
+        return view('comics.index', compact('comics', 'isAllLoaded'));
     }
 
     /**
