@@ -17,7 +17,6 @@
                 @endforeach
             </div>
             <div class="btn-container">
-                @dump($isAllLoaded)
                 @if (!$isAllLoaded)
                     <a  class="sans-narrow filled text-white py-1 me-2" 
                         href="{{route('home', ['loadBook' => count($comics) + 12])}}">
